@@ -32,7 +32,8 @@ schema_view = get_schema_view(
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/v1', include('core.urls')),
+    path('api/v1/', include('core.urls')),
+    path('__debug__/', include('debug_toolbar.urls')),
     re_path(
         r'^docs(?P<format>\.json|\.yaml)$',
         schema_view.without_ui(cache_timeout=0),
