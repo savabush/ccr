@@ -1,0 +1,13 @@
+*.log
+*.pot
+*.pyc
+__pycache__
+*.py[cod]
+*$py.class
+.env
+.venv
+env/
+venv/
+.idea/
+.pytest_cache
+data
