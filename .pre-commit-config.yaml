@@ -10,4 +10,4 @@ repos:
     hooks:
       - id: mypy
         additional_dependencies: [ types-all ]
-        exclude: (migrations)
+        exclude: (migrations/)

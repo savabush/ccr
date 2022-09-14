@@ -11,7 +11,7 @@ class TypeNews(models.Model):
     )
 
     name = models.CharField(max_length=30)
-    color = models.CharField(max_length=7,  validators=[color_validator], unique=True)
+    color = models.CharField(max_length=7, validators=[color_validator], unique=True)
 
     def __str__(self) -> models.CharField:
         return self.name

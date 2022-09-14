@@ -6,4 +6,6 @@ exclude =
     __init__.py,
     .mypy_cache,
     .pytest_cache,
-    migrations
+    migrations,
+    venv
+ignore = F403, F405
