@@ -1,10 +1,26 @@
 from typing import Union, Type
 from django.db.models import QuerySet
+from django.utils.decorators import method_decorator
 from rest_framework.viewsets import ModelViewSet
 from .models import TheNews, TypeNews
 from .serializers import NewsSerializer, TypesSerializer, ListNewsSerializer
+from drf_yasg import openapi
+from drf_yasg.utils import swagger_auto_schema
+
+type_of_news = openapi.Parameter(
+    name='type',
+    in_=openapi.IN_QUERY,
+    description='Type of News',
+    type=openapi.TYPE_STRING
+)
 
 
+@method_decorator(
+    name='list',
+    decorator=swagger_auto_schema(
+        manual_parameters=[type_of_news]
+    )
+)
 class TheNewsViewSet(ModelViewSet):
     serializer_class = NewsSerializer
     queryset = TheNews.objects.all()
