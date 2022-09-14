@@ -11,3 +11,4 @@ venv/
 .idea/
 .pytest_cache
 data
+.mypy_cache
